@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Verificador de Idade</title>
+  <title>Calculadora de Idade</title>
 </head>
 <body>
-  <label for="idadeInput">Idade:16</label>
-  <input type="text" id="idadeInput" placeholder="Insira sua idade">
-  <button id="verificarIdadeBtn"> Verificar Idade </button>
-  <p id="mensagem"></p>
-
-
-  <script src="script.js"></script>
-</body>
-</html>
+  <input id="nome1"/>
+  <button onclick="exibirMensagem()" id="botao"> Clique </button>
+  <p id="mensagem"></p> 
+  <body>
+    <script>
+            function exibirMensagem() {
+            var nome = document.getElementById("nome1").value;
+             var mensagem = 2024 - nome
+             document.getElementById("mensagem").innerText = mensagem;  
+         }
+    </script>
+    </body>
+    </html>
