@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Exibir/Ocultar Elemento</title>
+</head>
+<body>
+    <h2>Exibir/Ocultar Elemento</h2>
+    <button onclick="ocultarElemento()">Ocultar Elemento</button>
+    <button onclick="mostrarElemento()">Mostrar Elemento</button>
+    <div id="elemento" style="border: 1px solid #ccc; padding: 10px;">
+        Este é o elemento que pode ser exibido ou ocultado.
+    </div>
+
+    <script>
+        function ocultarElemento() {
+            document.getElementById("elemento").style.display = "none";
+        }
+
+        function mostrarElemento() {
+            document.getElementById("elemento").style.display = "block";
+        }
+    </script>
+</body>
+</html>
