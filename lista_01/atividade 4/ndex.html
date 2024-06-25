@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Verificação de Idade</title>
+</head>
+<body>
+    <h2>Verificação de Idade</h2>
+    <label for="idade">Digite sua idade:</label>
+    <input type="number" id="idade" required>
+    <button onclick="verificarIdade()">Verificar</button>
+    <p id="mensagem"></p>
+
+    <script>
+        function verificarIdade() {
+            var idade = document.getElementById("idade").value; // Obtém o valor da idade
+
+            // Verifica se a idade é maior ou igual a 18
+            if (idade >= 16) {
+                document.getElementById("mensagem").innerText = "Você é maior de idade.";
+            } else {
+                document.getElementById("mensagem").innerText = "Você é menor de idade.";
+            }
+        }
+    </script>
+</body>
+</html>
