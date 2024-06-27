@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário de Coleta</title>
+<script>
+  function enviarFormulario() {
+    // Captura os valores dos campos de entrada
+    var nome = document.getElementById('nome').value;
+    var email = document.getElementById('email').value;
+
+    // Cria um objeto JavaScript com os dados coletados
+    var dadosUsuario = {
+      nome: nome,
+      email: email
+    };
+
+    // Exibe os dados no console em formato JSON
+    console.log(JSON.stringify(dadosUsuario));
+  }
+</script>
+</head>
+<body>
+  <h2>Formulário de Coleta</h2>
+  <form>
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome"><br><br>
+    <label for="email">E-mail:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+    <button type="button" onclick="enviarFormulario()">Enviar</button>
+  </form>
+</body>
+</html>
