@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editar Usuário</title>
+<style>
+</style>
+</head>
+<body>
+<h2>Lista de Usuários</h2>
+<table id="userTable">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>João</td>
+            <td>joao@example.com</td>
+            <td><button onclick="editUser(this)">Editar</button></td>
+        </tr>
+        <tr>
+            <td>Maria</td>
+            <td>maria@example.com</td>
+            <td><button onclick="editUser(this)">Editar</button></td>
+        </tr>
+    </tbody>
+</table>
+<h2>Editar Usuário</h2>
+<form id="editForm">
+    <label for="editName">Nome:</label><br>
+    <input type="text" id="editName" name="editName" required><br><br>
+    <label for="editEmail">Email:</label><br>
+    <input type="email" id="editEmail" name="editEmail" required><br><br>
+    <input type="hidden" id="editRowIndex" name="editRowIndex">
+    <button type="submit">Salvar Alterações</button>
+</form>
+<script>
+    function editUser(button) {
+        var row = button.parentNode.parentNode;
+        var cells = row.getElementsByTagName("td");
+        document.getElementById("editName").value = cells[0].innerText;
+        document.getElementById("editEmail").value = cells[1].innerText;
+        document.getElementById("editRowIndex").value = row.rowIndex - 1; 
+        document.getElementById("editForm").scrollIntoView();
+    }
+    document.getElementById("editForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var rowIndex = document.getElementById("editRowIndex").value;
+        var name = document.getElementById("editName").value;
+        var email = document.getElementById("editEmail").value;
+        var table = document.getElementById("userTable");
+        var row = table.rows[parseInt(rowIndex) + 1];
+        row.cells[0].innerText = name;
+        row.cells[1].innerText = email;
+        document.getElementById("editName").value = "";
+        document.getElementById("editEmail").value = "";
+        document.getElementById("editRowIndex").value = "";
+    });
+</script>
+
+</body>
+</html>
