@@ -10,11 +10,24 @@
   function adicionarUsuario() {
     var nome = document.getElementById('nome').value;
     var email = document.getElementById('email').value;
+    var tbodyRef = document.getElementById('tabelaUsuarios').getElementsByTagName('tbody')[0];
+
+// Insert a row at the end of table
+var newRow = tbodyRef.insertRow();
+
+// Insert a cell at the end of the row
+var celulanome = newRow.insertCell();
+var celulaemail = newRow.insertCell();
+
+
+// Append a text node to the cell
+celulanome.appendChild(document.createTextNode(nome));
+celulaemail.appendChild(document.createTextNode(email));
   }
 </script>
 </head>
 <body>
-  <h2>Formulário e Tabela</h2>
+  <h2>Formulário e Tabela</h2>  
   <form>
     <label for="nome">Nome:</label><br>
     <input type="text" id="nome" name="nome"><br><br>

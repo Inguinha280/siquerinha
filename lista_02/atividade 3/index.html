@@ -10,8 +10,10 @@
   function enviarFormulario() {
     var nome = document.getElementById('nome').value;
     var email = document.getElementById('email').value;
+    document.getElementById("coluna1").innerText = nome 
+    document.getElementById("coluna2").innerText = email
   }
-</script>
+</script>  
 </head>
 <body>
   <h2>Formulário de Coleta</h2>
@@ -22,7 +24,15 @@
     <input type="email" id="email" name="email"><br><br>
     <button type="button" onclick="enviarFormulario()">Enviar</button>
   </form>
-
-  <div id="resultado"></div>
+  <table>
+    <tr>
+      <th> nome </th> 
+      <th> email </th>
+    </tr>
+    <tr>
+      <td id ="coluna1"></td>
+      <td id ="coluna2"></td>
+    </tr>
+  </table>
 </body>
 </html>

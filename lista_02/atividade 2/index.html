@@ -3,35 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Formulário de Coleta com Validação</title>
+<title>Formulário e Tabela</title>
+<style>
+</style>
 <script>
-  function enviarFormulario() {
+  function adicionarUsuario() {
     var nome = document.getElementById('nome').value;
     var email = document.getElementById('email').value;
-    if (nome.trim() === '') {
-      alert('Por favor, preencha o campo Nome.');
-      return;
-    }
-    if (email.trim() === '') {
-      alert('Por favor, preencha o campo Email.');
-      return;
-    }
-    var dadosUsuario = {
-      nome: nome,
-      email: email
-    };
-    console.log(JSON.stringify(dadosUsuario));
+    var tbodyRef = document.getElementById('tabelaUsuarios').getElementsByTagName('tbody')[0];
+
+// Insert a row at the end of table
+var newRow = tbodyRef.insertRow();
+
+// Insert a cell at the end of the row
+var celulanome = newRow.insertCell();
+var celulaemail = newRow.insertCell();
+
+
+// Append a text node to the cell
+celulanome.appendChild(document.createTextNode(nome));
+celulaemail.appendChild(document.createTextNode(email));
   }
 </script>
 </head>
 <body>
-  <h2>Formulário de Coleta com Validação</h2>
+  <h2>Formulário e Tabela</h2>  
   <form>
     <label for="nome">Nome:</label><br>
     <input type="text" id="nome" name="nome"><br><br>
     <label for="email">E-mail:</label><br>
     <input type="email" id="email" name="email"><br><br>
-    <button type="button" onclick="enviarFormulario()">Enviar</button>
+    <button type="button" onclick="adicionarUsuario()">Enviar</button>
   </form>
+  <table id="tabelaUsuarios">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>E-mail</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
 </body>
 </html>
