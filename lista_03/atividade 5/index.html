@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divs dentro de um Container Flex</title>
+    <style>
+        /* Estilo para o container principal */
+        .container {
+            display: flex; /* Tornar o container um flex container */
+            border: 1px solid #000000; /* Adicionar borda de 1px sólida preta */
+            padding: 20px; /* Adicionar padding de 20px dentro do container */
+            text-align: center; /* Alinhar o texto das divs ao centro */
+        }
+
+        /* Estilo para as divs internas dentro do container */
+        .container > div {
+            flex: 1; /* Distribuir as divs internas em linha */
+            border: 1px solid #000000; /* Adicionar borda de 1px sólida preta para cada div */
+            padding: 20px; /* Adicionar padding de 20px dentro de cada div */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>Div 1</div>
+        <div>Div 2</div>
+        <div>Div 3</div>
+    </div>
+</body>
+</html>
