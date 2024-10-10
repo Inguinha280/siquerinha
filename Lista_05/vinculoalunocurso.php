@@ -10,7 +10,7 @@ class Pessoa {
     {
         $this->conn = $conn;
     }
-
+ 
     function getAll() {
         $sql = "SELECT 
            id, 

@@ -13,7 +13,7 @@ class Pessoa {
 
     function getAll() {
         $sql = "SELECT 
-            nome, 
+            nome,  
             datacadastro,
 
             DATE_FORMAT(datacadastro, '%d/%m/%Y %H:%i:%s') datacadastro,

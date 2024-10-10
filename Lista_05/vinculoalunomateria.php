@@ -17,7 +17,7 @@ class Pessoa {
            datacadastro,
 
             DATE_FORMAT(datacadastro, '%d/%m/%Y %H:%i:%s') datacadastro,
-           
+            
         FROM vinculoalunomateria";
         $result = $this->conn->query($sql);
 

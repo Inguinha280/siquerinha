@@ -8,7 +8,7 @@ class Pessoa {
 
     function __construct($conn)
     {
-        $this->conn = $conn;
+        $this->conn = $conn; 
     }
 
     function getAll() {

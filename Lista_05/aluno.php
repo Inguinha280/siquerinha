@@ -3,7 +3,7 @@
 include_once 'db.php';
 
 class Pessoa {
-
+ 
     private $conn;
 
     function __construct($conn)
